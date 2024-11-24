@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener - TinyURL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">TinyURL</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Simplify Your Links</h1>
+    <p>Shorten your URLs with ease using TinyURL's reliable service.</p>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <section class="shortener">
+      <h2>Shorten Your URL</h2>
+      <input type="text" id="longUrl" placeholder="Paste your long URL here">
+      <button id="shortenBtn">Shorten</button>
+      <p id="shortUrl" class="result"></p>
+    </section>
+    <section class="description">
+      <h3>Why Use Our URL Shortener?</h3>
+      <p>
+        URL shorteners are a simple yet powerful tool that transform long, unwieldy links into compact, user-friendly versions. 
+        Whether you're sharing links via social media, email, or text messages, our service ensures they look clean, 
+        professional, and are easy to remember.
+      </p>
+    </section>
+    </main>
+    
+      <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formsubmit.co/your-email@example.com" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+  
+    <!-- Back to Top Button -->
+  <button id="backToTop">🔝</button>
+  <br>
+  	
+  </br>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> TinyURL by Jphabs Khalifa</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
