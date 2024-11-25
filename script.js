@@ -1,16 +1,12 @@
-// API Key
 const API_KEY = "6ZwPtLozMRMWXSdwuduAUvaj5pyVg3bTURl3EtiC94DC6lKCuJ9478LUZ1RF";
 
-// DOM Elements
 const shortenBtn = document.getElementById("shortenBtn");
 const longUrlInput = document.getElementById("longUrl");
 const shortUrlResult = document.getElementById("shortUrl");
 const yearSpan = document.getElementById("year");
 
-// Auto Set Year
 yearSpan.textContent = new Date().getFullYear();
 
-// Shorten URL Functionality
 shortenBtn.addEventListener("click", async () => {
   const longUrl = longUrlInput.value.trim();
 
@@ -40,7 +36,6 @@ shortenBtn.addEventListener("click", async () => {
   }
 });
 
-// Show/Hide Back to Top Button
 const backToTopBtn = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 300) {
@@ -50,7 +45,31 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Scroll to Top on Click
 backToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  var form = document.getElementById('contactForm');
+  var formData = new FormData(form);
+
+  formData.append('_next', 'https://tinyurls.pages.dev/thankyou.html');
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      window.location.href = "https://tinyurls.pages.dev/thankyou.html";
+    } else {
+      alert('There was an error submitting your form. Please try again.');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('There was an error submitting your form. Please try again.');
+  });
+}
